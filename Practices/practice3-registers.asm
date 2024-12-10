@@ -35,7 +35,3 @@ sub s3, s1, s2 # d=b-c
 sub t0, s3, s0 # t0 = (d-a)
 add t1, s3, s0 # t1 = (d+a)
 add s1, t0, t1 # b = tmp1+tmp2 = (d-a) + (d+a)
-
-
-
-

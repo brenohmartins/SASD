@@ -15,4 +15,3 @@ add a, b, c
 sub d, e, f
 
 # 'sub' is the operator, and follow the same logic of the 'sum' parameters
-
