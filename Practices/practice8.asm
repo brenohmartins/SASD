@@ -1,7 +1,6 @@
-#------------CONDITIONAL SENTENCES AND LOOPS-------------
+#------------Conditional Sentences-------------
 
 # Conditional sentences: if, if/else
-# Loops: while, for
 
 # Code in C:
 # if (i==j)
