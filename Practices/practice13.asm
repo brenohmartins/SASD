@@ -84,3 +84,23 @@ f1:
     add a0, s3, zero  # put the return value in a0
 
     jr ra             # return to caller
+
+
+# USING THE STACK IN FUNCTIONS
+
+# s3 = result
+
+different_sums:
+    addi sp, sp, -12 # creates space on the stack to store three records
+    sw s3, 8(sp) # save s3 in the stack
+    sw t0, 4(sp) #  save t0 in the stack
+    sw t1, 0(sp) #  save t1 in the stack
+    add t0, a0, a1 # t0 = f + g
+    add t1, a2, a3 # t1 = h + i
+    sub s3, t0, t1 # resultado=(f+g)−(h+i)
+    add a0, s3, zero # save return in a0
+    lw s3, 8(sp) # restore s3 from the stack
+    lw t0, 4(sp) # restore t0 from the stack
+    lw t1, 0(sp) # restore t1 from the stack
+    addi sp, sp, 12 # deallocate stack space
+    jr ra # return to the caller
