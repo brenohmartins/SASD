@@ -104,3 +104,19 @@ different_sums:
     lw t1, 0(sp) # restore t1 from the stack
     addi sp, sp, 12 # deallocate stack space
     jr ra # return to the caller
+
+# Resume of a calling functions:
+
+# Caller:
+#   Saves necessary registers (ra, maybe t0-t6/a0-a7)
+#   Put arguments in a0-a7
+#   Call the function: jal callee
+#   Result found in a0
+#   Restores any saved records
+
+# Called:
+#   Saves records that may be disturbed (s0-s11)
+#   Execute function
+#   Puts result in a0
+#   Restores records
+#   Returns: jr ra
